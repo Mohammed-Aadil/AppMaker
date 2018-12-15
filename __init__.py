@@ -26,7 +26,7 @@ class Maker:
         self.master.configure(bg = self.bgcolor)
 class SetBtn:
     def __init__(self, master, text=None , command = None , row = None , col= None):
-        self.master = master.__init__()
+        self.master = master
         self.text = text
         self.command = command
         self.row = row
