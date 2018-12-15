@@ -33,5 +33,5 @@ class SetBtn:
         self.col = col
         Button(self.master,text=self.text,command=self.command).grid(row=self.row,column=self.col)
 app = Maker()
-b1 = SetBtn(app, 'text')
+b1 = SetBtn(app.master, 'text')
 app.run()
