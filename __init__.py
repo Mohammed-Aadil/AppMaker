@@ -7,12 +7,6 @@ class Maker:
         self.master.title('AppMaker')
     def run(self):
         self.master.mainloop()
-    def SetBtn(self, text = None , command = None, row = None , col = None):
-        self.text = text
-        self.command = command
-        self.row = row
-        self.col = col
-        Button(self.master, text=self.text, command = self.command).grid(row = self.row, column = self.col)
     def SetCaption(self,caption = 'AppMaker'):
         self.caption = caption
         self.master.title(self.caption)
@@ -30,14 +24,14 @@ class Maker:
     def SetConfigure(self,bgcolor):
         self.bgcolor = bgcolor
         self.master.configure(bg = self.bgcolor)
-    def SetText(self,text, row = None , col = None, fg = 'black', bg = None):
+class SetBtn:
+    def __init__(self, master, text=None , command = None , row = None , col= None):
+        self.master = master.__init__()
         self.text = text
+        self.command = command
         self.row = row
         self.col = col
-        self.fg = fg
-        self.bg = bg
-        Label(self.master,text=self.text,fg=self.fg,bg=self.bg).grid(row=self.row,column=self.col)
-    def SetEntryBox(self,row = None,col=None):
-        self.row = row
-        self.col = col
-        self.e = Entry(self.master).grid(row = self.row, column=self.col)
+        Button(self.master,text=self.text,command=self.command).grid(row=self.row,column=self.col)
+app = Maker()
+b1 = SetBtn(app, 'text')
+app.run()
