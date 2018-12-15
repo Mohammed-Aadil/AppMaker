@@ -15,6 +15,6 @@ class Maker:
         self.row = row
         self.col = col
         Button(self.master, text=self.text, command = self.command).grid(row = self.row, column = self.col)
-    def Caption(self,title = 'AppMaker'):
+    def SetCaption(self,title = 'AppMaker'):
         self.title = title
         self.master.title(self.title)
